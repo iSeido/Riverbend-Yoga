@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="See Riverbend Yoga Studio's monthly workshops and request a spot in a workshop, class, or private session.">
+  <title>Workshops and event requests | Riverbend Yoga Studio</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a href="index.html" class="logo"><img src="images/yoga-logo_c.png" alt="Riverbend Yoga Studio home page" width="160" height="116"></a>
+    <p class="tagline">Calm, inclusive yoga for every body and every schedule.</p>
+    <nav class="main-nav" aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Classes, private sessions and pricing</a></li>
+        <li><a href="about.html">About our instructors and studio</a></li>
+        <li><a href="events.html" aria-current="page">Workshops and event requests</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <div class="page-intro">
+      <h1>Workshops and event requests</h1>
+      <p>Once a month, we host a two-hour workshop that explores one topic in more depth than a regular class allows. Workshops are small and open to all levels unless noted.</p>
+    </div>
+    <figure class="feature-figure">
+      <img src="images/yoga-workshop_c.png" alt="A Riverbend instructor guiding a seated meditation workshop, with a diverse group of students sitting cross-legged on mats in a bright studio with brick walls" width="600" height="369">
+      <figcaption>Students relax into a guided seated meditation during our "Breath and Calm" workshop, led from the front of the room by one of our instructors.</figcaption>
+    </figure>
+    <section class="card-grid" aria-labelledby="workshops-heading">
+      <h2 id="workshops-heading">Monthly workshop list</h2>
+      <p>All workshops take place on Saturdays from 2:00 PM to 4:00 PM and cost $35. Places are limited to 14 students, so we recommend <a href="#request-heading">requesting a spot</a> early.</p>
+      <article class="card">
+        <h3>Breath and Calm: An Introduction to Breathing Practices</h3>
+        <p><strong>Date:</strong> <time datetime="2026-11-21">Saturday, November 21, 2026</time><br>
+          <strong>Instructor:</strong> Daniel Reyes<br>
+          <strong>Level:</strong> All levels, beginners welcome</p>
+        <p>Learn simple breathing techniques you can use at your desk, before sleep, or whenever you feel overwhelmed. Includes a guided seated meditation.</p>
+      </article>
+      <article class="card">
+        <h3>Yoga for Desk Workers: Neck, Shoulders and Back</h3>
+        <p><strong>Date:</strong> <time datetime="2026-12-12">Saturday, December 12, 2026</time><br>
+          <strong>Instructor:</strong> Grace Okafor<br>
+          <strong>Level:</strong> All levels</p>
+        <p>A practical workshop for busy professionals. You will leave with a short routine to ease tension from long hours of sitting and screen time.</p>
+      </article>
+      <article class="card">
+        <h3>New Year, Gentle Start: Building a Home Practice</h3>
+        <p><strong>Date:</strong> <time datetime="2027-01-16">Saturday, January 16, 2027</time><br>
+          <strong>Instructor:</strong> Maya Collins<br>
+          <strong>Level:</strong> Beginners</p>
+        <p>Create a simple 15-minute yoga routine you can practise at home, and learn how to stay consistent without pushing too hard.</p>
+      </article>
+      <article class="card">
+        <h3>Balance and Stability for Older Adults</h3>
+        <p><strong>Date:</strong> <time datetime="2027-02-13">Saturday, February 13, 2027</time><br>
+          <strong>Instructor:</strong> Grace Okafor<br>
+          <strong>Level:</strong> All levels, chairs provided</p>
+        <p>Gentle standing and chair-supported practice for steadier balance and stronger legs.</p>
+      </article>
+      <article class="card">
+        <h3>Arm Balance Foundations: Preparing for Crow Pose</h3>
+        <p><strong>Date:</strong> <time datetime="2027-03-13">Saturday, March 13, 2027</time><br>
+          <strong>Instructor:</strong> Maya Collins<br>
+          <strong>Level:</strong> Some yoga experience recommended</p>
+        <p>Break down crow pose step by step, with plenty of supported variations using blocks. Lifting off the floor is optional; the preparation work is the real goal.</p>
+      </article>
+      <article class="card">
+        <h3>Deep Rest: Restorative Yoga and Yoga Nidra</h3>
+        <p><strong>Date:</strong> <time datetime="2027-04-17">Saturday, April 17, 2027</time><br>
+          <strong>Instructor:</strong> Daniel Reyes<br>
+          <strong>Level:</strong> All levels</p>
+        <p>An afternoon of fully supported restorative poses followed by a guided deep-relaxation practice. Bring comfortable layers.</p>
+      </article>
+    </section>
+    <section aria-labelledby="request-heading">
+      <h2 id="request-heading">Request a spot</h2>
+      <p>Interested in a workshop, a class, or a private session? Fill in the form below. There is no payment online; a member of our team will contact you within two business days to confirm your place. Fields marked "required" must be completed.</p>
+      <form class="request-form" action="#" method="post">
+        <fieldset>
+          <legend>Your details</legend>
+          <p>
+            <label for="full-name">Full name (required)</label><br>
+            <input type="text" id="full-name" name="full_name" autocomplete="name" minlength="2" maxlength="80" required>
+          </p>
+          <p>
+            <label for="email">Email address (required)</label><br>
+            <input type="email" id="email" name="email" autocomplete="email" maxlength="100" required>
+          </p>
+          <p>
+            <label for="phone">Phone number (optional, digits, spaces, brackets and dashes only)</label><br>
+            <input type="tel" id="phone" name="phone" autocomplete="tel" pattern="[0-9 \(\)+\-]{7,20}" title="Please enter 7 to 20 characters using digits, spaces, brackets, plus signs or dashes.">
+          </p>
+        </fieldset>
+        <fieldset>
+          <legend>Class or event interest</legend>
+          <p>
+            <label for="interest">Which class or event are you interested in? (required)</label><br>
+            <select id="interest" name="interest" required>
+              <option value="">Please choose an option</option>
+              <optgroup label="Monthly workshops">
+                <option value="workshop-breath-calm">Breath and Calm (November 21, 2026)</option>
+                <option value="workshop-desk-workers">Yoga for Desk Workers (December 12, 2026)</option>
+                <option value="workshop-home-practice">New Year, Gentle Start (January 16, 2027)</option>
+                <option value="workshop-balance">Balance and Stability for Older Adults (February 13, 2027)</option>
+                <option value="workshop-arm-balance">Arm Balance Foundations (March 13, 2027)</option>
+                <option value="workshop-deep-rest">Deep Rest (April 17, 2027)</option>
+              </optgroup>
+              <optgroup label="Regular classes">
+                <option value="class-gentle">Gentle Yoga</option>
+                <option value="class-beginner-basics">Beginner Basics</option>
+                <option value="class-vinyasa">Vinyasa Flow</option>
+                <option value="class-restorative">Restorative Yoga</option>
+                <option value="class-chair">Chair Yoga</option>
+                <option value="class-lunchtime">Lunchtime Stretch</option>
+              </optgroup>
+              <optgroup label="One-to-one">
+                <option value="private-session">Private session</option>
+              </optgroup>
+            </select>
+          </p>
+          <p>
+            <label for="preferred-date">Preferred start date for a class or private session (optional)</label><br>
+            <input type="date" id="preferred-date" name="preferred_date" min="2026-11-01" max="2027-06-30">
+          </p>
+          <p>
+            <label for="spots">Number of spots requested (required, 1 to 4)</label><br>
+            <input type="number" id="spots" name="spots" min="1" max="4" step="1" value="1" required>
+          </p>
+        </fieldset>
+        <fieldset>
+          <legend>Experience level (required)</legend>
+          <p class="choice">
+            <input type="radio" id="level-new" name="experience" value="new" required>
+            <label for="level-new">Completely new to yoga</label>
+          </p>
+          <p class="choice">
+            <input type="radio" id="level-beginner" name="experience" value="beginner">
+            <label for="level-beginner">Beginner (a few classes)</label>
+          </p>
+          <p class="choice">
+            <input type="radio" id="level-intermediate" name="experience" value="intermediate">
+            <label for="level-intermediate">Intermediate (practise regularly)</label>
+          </p>
+          <p class="choice">
+            <input type="radio" id="level-experienced" name="experience" value="experienced">
+            <label for="level-experienced">Experienced (several years of practice)</label>
+          </p>
+        </fieldset>
+        <fieldset>
+          <legend>Preferred contact method (required)</legend>
+          <p class="choice">
+            <input type="radio" id="contact-email" name="contact_method" value="email" required>
+            <label for="contact-email">Email</label>
+          </p>
+          <p class="choice">
+            <input type="radio" id="contact-phone" name="contact_method" value="phone">
+            <label for="contact-phone">Phone call</label>
+          </p>
+          <p class="choice">
+            <input type="radio" id="contact-text" name="contact_method" value="text">
+            <label for="contact-text">Text message</label>
+          </p>
+        </fieldset>
+        <fieldset>
+          <legend>Your message</legend>
+          <p>
+            <label for="message">Questions, access needs, or anything else we should know (optional, up to 500 characters)</label><br>
+            <textarea id="message" name="message" rows="6" cols="50" maxlength="500"></textarea>
+          </p>
+          <p class="choice">
+            <input type="checkbox" id="consent" name="consent" value="yes" required>
+            <label for="consent">I agree that Riverbend Yoga Studio may contact me about this request (required)</label>
+          </p>
+        </fieldset>
+        <p class="button-row">
+          <button type="submit" class="btn">Request my spot</button>
+          <button type="reset" class="btn btn-outline">Clear form</button>
+        </p>
+      </form>
+      <p>Prefer to talk to someone? Call us during front desk hours, or read about our <a href="about.html#accessibility-heading">accessibility accommodations</a> and <a href="about.html#policies-heading">studio policies</a> before you visit.</p>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <h2>Contact Riverbend Yoga Studio</h2>
+    <address>
+      Riverbend Yoga Studio<br>
+      214 River Road, Suite 2<br>
+      Phone: <a href="tel:+15550142290">(555) 014-2290</a><br>
+      Email: <a href="mailto:hello@riverbendyoga.example">hello@riverbendyoga.example</a>
+    </address>
+    <p class="hours">Front desk hours: Monday to Friday 6:00 AM to 8:30 PM, Saturday and Sunday 8:30 AM to 6:30 PM.</p>
+    <p class="copyright"><small>&copy; 2026 Riverbend Yoga Studio. All rights reserved.</small></p>
+  </footer>
+</body>
+</html>

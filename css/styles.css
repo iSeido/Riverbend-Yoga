@@ -1,0 +1,753 @@
+/* ==========================================================
+   Riverbend Yoga Studio - Main Stylesheet (Touchstone 3)
+   One external stylesheet linked from all four pages.
+
+   Contents
+   1. Fonts
+   2. Colors and spacing (variables)
+   3. Base styles
+   4. Header and main navigation
+   5. Page layout and sections
+   6. Buttons
+   7. Images, picture, figure and audio
+   8. Cards (class types, instructors, workshops)
+   9. Tables (schedule and pricing)
+   10. Request form
+   11. Footer
+   12. Responsive styles (media queries)
+   ========================================================== */
+
+
+/* ---------- 1. Fonts (stored locally in the fonts folder) ---------- */
+@font-face {
+  font-family: "Lora";
+  src: url("../fonts/lora-latin-600-normal.woff2") format("woff2");
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Lora";
+  src: url("../fonts/lora-latin-700-normal.woff2") format("woff2");
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Nunito Sans";
+  src: url("../fonts/nunito-sans-latin-400-normal.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Nunito Sans";
+  src: url("../fonts/nunito-sans-latin-700-normal.woff2") format("woff2");
+  font-weight: 700;
+  font-display: swap;
+}
+
+
+/* ---------- 2. Variables ---------- */
+/* The whole site uses only these four colors. */
+:root {
+  --cream: #F7F3EC;     /* page background */
+  --sage: #4F6F5A;      /* main brand color: headings, links, buttons */
+  --sand: #D9B99B;      /* soft accent: borders, highlight boxes */
+  --charcoal: #2E3532;  /* body text and footer */
+
+  /* A see-through version of sand, used for table stripes */
+  --sand-light: rgba(217, 185, 155, 0.25);
+
+  --heading-font: "Lora", Georgia, serif;
+  --body-font: "Nunito Sans", Arial, sans-serif;
+
+  --space-sm: 0.75rem;
+  --space-md: 1.5rem;
+  --space-lg: 3rem;
+
+  --radius: 12px;
+  --max-width: 1100px;
+
+  /* Side padding that keeps content inside a 1100px column on wide screens */
+  --side-padding: max(1.5rem, calc((100% - var(--max-width)) / 2));
+}
+
+
+/* ---------- 3. Base styles ---------- */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: var(--cream);
+  color: var(--charcoal);
+  font-family: var(--body-font);
+  font-size: 1.125rem;   /* slightly larger text for older adults */
+  line-height: 1.7;
+}
+
+h1,
+h2,
+h3,
+legend {
+  font-family: var(--heading-font);
+  color: var(--sage);
+  line-height: 1.25;
+}
+
+h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin: 0 0 var(--space-sm);
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0 0 var(--space-md);
+}
+
+h3 {
+  font-size: 1.35rem;
+  font-weight: 600;
+  margin: var(--space-md) 0 0.5rem;
+}
+
+p {
+  margin: 0 0 var(--space-md);
+  max-width: 70ch;   /* keeps lines short enough to read comfortably */
+}
+
+a {
+  color: var(--sage);
+  font-weight: 700;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+a:hover,
+a:focus {
+  color: var(--charcoal);
+}
+
+/* A clear outline for keyboard users */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--charcoal);
+  outline-offset: 3px;
+}
+
+ul {
+  padding-left: 1.4rem;
+}
+
+li {
+  margin-bottom: 0.4rem;
+}
+
+/* Lists with a leaf-colored dot instead of a black bullet */
+.check-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.check-list li {
+  position: relative;
+  padding-left: 1.8rem;
+}
+
+.check-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+  background-color: var(--sage);
+}
+
+
+/* ---------- 4. Header and main navigation ---------- */
+.site-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-sm) var(--space-md);
+  padding: var(--space-sm) var(--side-padding);
+  background-color: var(--cream);
+  border-bottom: 3px solid var(--sand);
+}
+
+.logo img {
+  display: block;
+  width: 120px;
+  height: auto;
+  /* The logo file has a white background. "multiply" lets the cream
+     header show through the white parts, so no white box appears. */
+  mix-blend-mode: multiply;
+}
+
+.tagline {
+  flex: 1;
+  margin: 0;
+  font-family: var(--heading-font);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--sage);
+}
+
+/* The menu sits on its own full-width row under the logo */
+.main-nav {
+  flex-basis: 100%;
+}
+
+.main-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.main-nav li {
+  margin: 0;
+}
+
+.main-nav a {
+  display: block;
+  padding: 0.5rem 1.1rem;
+  border: 2px solid var(--sage);
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.main-nav a:hover,
+.main-nav a:focus {
+  background-color: var(--sand);
+  border-color: var(--sand);
+  color: var(--charcoal);
+}
+
+/* The link for the page the visitor is on (uses aria-current from the HTML) */
+.main-nav a[aria-current="page"] {
+  background-color: var(--sage);
+  color: var(--cream);
+}
+
+/* "On this page" links on the services page */
+.page-nav {
+  padding: var(--space-md);
+  margin-bottom: var(--space-lg);
+  border: 2px solid var(--sand);
+  border-radius: var(--radius);
+}
+
+.page-nav h2 {
+  font-size: 1.2rem;
+  margin-bottom: var(--space-sm);
+}
+
+.page-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm) var(--space-md);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+
+/* ---------- 5. Page layout and sections ---------- */
+main {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--space-lg) 1.5rem;
+}
+
+/* Green welcome box at the top of every page */
+.page-intro {
+  margin-bottom: var(--space-lg);
+  padding: var(--space-lg);
+  border-radius: var(--radius);
+  background-color: var(--sage);
+  color: var(--cream);
+}
+
+.page-intro h1 {
+  color: var(--cream);
+}
+
+.page-intro p {
+  font-size: 1.2rem;
+}
+
+.page-intro p:last-child {
+  margin-bottom: 0;
+}
+
+/* Inside the green box, the outline button uses light colors */
+.page-intro .btn-outline {
+  border-color: var(--cream);
+  color: var(--cream);
+}
+
+.page-intro .btn {
+  border-color: var(--cream);
+}
+
+section {
+  padding: var(--space-lg) 0;
+  border-top: 2px solid var(--sand);
+}
+
+/* No line above the first section after the welcome box or page links */
+.page-intro + section,
+.page-nav + section,
+.feature-figure + section {
+  border-top: none;
+  padding-top: 0;
+}
+
+/* Photo and text side by side */
+.media-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+}
+
+.media-row > img,
+.media-row > picture {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.media-text {
+  flex: 1 1 0;
+}
+
+.media-text p:last-child {
+  margin-bottom: 0;
+}
+
+/* Sand-colored boxes for the breathing exercise and the "Ready to begin?" message */
+.highlight-box,
+.cta-box {
+  margin: var(--space-lg) 0;
+  padding: var(--space-lg);
+  border-top: none;
+  border-radius: var(--radius);
+  background-color: var(--sand);
+}
+
+.highlight-box h2,
+.cta-box h2 {
+  color: var(--charcoal);
+}
+
+.highlight-box a,
+.cta-box a {
+  color: var(--charcoal);
+}
+
+.cta-box p {
+  margin-bottom: 0;
+}
+
+/* Studio policies: each policy heading gets a small sand line underneath */
+.policies h3 {
+  padding-bottom: 0.3rem;
+  border-bottom: 2px solid var(--sand);
+}
+
+
+/* ---------- 6. Buttons ---------- */
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.8rem;
+  border: 2px solid var(--sage);
+  border-radius: 999px;
+  background-color: var(--sage);
+  color: var(--cream);
+  font-family: var(--body-font);
+  font-size: 1.05rem;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: var(--charcoal);
+  border-color: var(--charcoal);
+  color: var(--cream);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--sage);
+}
+
+/* In the green welcome box, the main button turns cream so it stands out */
+.page-intro .btn:not(.btn-outline) {
+  background-color: var(--cream);
+  color: var(--sage);
+}
+
+.page-intro .btn:hover,
+.page-intro .btn:focus {
+  background-color: var(--charcoal);
+  border-color: var(--charcoal);
+  color: var(--cream);
+}
+
+
+/* ---------- 7. Images, picture, figure and audio ---------- */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+main img {
+  display: block;
+  border-radius: var(--radius);
+}
+
+.feature-figure {
+  margin: 0 0 var(--space-lg);
+}
+
+.feature-figure img {
+  width: 100%;
+  max-width: 800px;
+}
+
+figcaption {
+  margin-top: var(--space-sm);
+  font-size: 1rem;
+  font-style: italic;
+}
+
+audio {
+  display: block;
+  width: 100%;
+  max-width: 600px;
+}
+
+
+/* ---------- 8. Cards ---------- */
+/* Sections with cards: the heading and paragraphs take a full row,
+   and the cards share the rows below and wrap when space runs out */
+.card-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+}
+
+.card-grid > h2,
+.card-grid > p {
+  flex-basis: 100%;
+  margin-bottom: 0;
+}
+
+.card {
+  flex: 1 1 300px;
+  padding: var(--space-md);
+  border: 2px solid var(--sand);
+  border-radius: var(--radius);
+  background-color: var(--cream);
+}
+
+.card h3 {
+  margin-top: 0;
+}
+
+.card p:last-child {
+  margin-bottom: 0;
+}
+
+.instructor-photo {
+  width: 160px;
+  margin-bottom: var(--space-sm);
+}
+
+
+/* ---------- 9. Tables ---------- */
+/* The wrapper lets a wide table scroll inside itself on small phones,
+   so the whole page never scrolls sideways */
+.table-wrap {
+  overflow-x: auto;
+  margin-bottom: var(--space-md);
+  border: 2px solid var(--sand);
+  border-radius: var(--radius);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1rem;
+}
+
+caption {
+  padding: var(--space-sm);
+  font-family: var(--heading-font);
+  font-weight: 600;
+  color: var(--sage);
+  text-align: left;
+}
+
+th,
+td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+thead th {
+  background-color: var(--sage);
+  color: var(--cream);
+}
+
+tbody th {
+  color: var(--sage);
+}
+
+tbody tr:nth-child(odd) {
+  background-color: var(--sand-light);
+}
+
+
+/* ---------- 10. Request form ---------- */
+.request-form {
+  max-width: 760px;
+}
+
+fieldset {
+  margin: 0 0 var(--space-md);
+  padding: var(--space-md);
+  border: 2px solid var(--sand);
+  border-radius: var(--radius);
+}
+
+legend {
+  padding: 0 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+fieldset p {
+  margin-bottom: var(--space-sm);
+}
+
+label {
+  font-weight: 700;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  margin-top: 0.3rem;
+  padding: 0.7rem;
+  border: 2px solid var(--sand);
+  border-radius: 8px;
+  background-color: var(--cream);
+  color: var(--charcoal);
+  font-family: var(--body-font);
+  font-size: 1rem;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--sage);
+}
+
+/* Radio buttons and the checkbox sit next to their labels */
+.choice {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+}
+
+.choice input {
+  width: 1.3rem;
+  height: 1.3rem;
+  margin: 0.25rem 0 0;
+  flex-shrink: 0;
+  accent-color: var(--sage);
+}
+
+.choice label {
+  font-weight: 400;
+}
+
+
+/* ---------- 11. Footer ---------- */
+.site-footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md) var(--space-lg);
+  padding: var(--space-lg) var(--side-padding) var(--space-md);
+  background-color: var(--charcoal);
+  color: var(--cream);
+}
+
+.site-footer h2 {
+  flex-basis: 100%;
+  margin: 0;
+  font-size: 1.5rem;
+  color: var(--sand);
+}
+
+.site-footer address,
+.site-footer .hours {
+  flex: 1 1 280px;
+  margin: 0;
+  font-style: normal;
+}
+
+.site-footer a {
+  color: var(--cream);
+}
+
+.site-footer a:hover,
+.site-footer a:focus {
+  color: var(--sand);
+}
+
+a[href^="tel:"] {
+  white-space: nowrap;   /* keeps the phone number on one line */
+}
+
+.site-footer .copyright {
+  flex-basis: 100%;
+  max-width: none;
+  margin: 0;
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--sage);
+  text-align: center;
+}
+
+
+/* ---------- 12. Responsive styles ---------- */
+
+/* Tablets (900px wide and smaller) */
+@media (max-width: 900px) {
+  h1 {
+    font-size: 2.3rem;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  /* Photos stack above their text */
+  .media-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  /* width: 100% keeps the photo inside small screens,
+     max-width stops it from getting too large on tablets */
+  .media-row > img,
+  .media-row > picture {
+    width: 100%;
+    max-width: 560px;
+  }
+
+  .page-intro,
+  .highlight-box,
+  .cta-box {
+    padding: var(--space-md);
+  }
+}
+
+/* Mobile phones (600px wide and smaller) */
+@media (max-width: 600px) {
+  body {
+    font-size: 1.0625rem;
+  }
+
+  h1 {
+    font-size: 1.9rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  main {
+    padding: var(--space-md) 1rem;
+  }
+
+  section {
+    padding: var(--space-md) 0;
+  }
+
+  /* Logo and tagline centered, menu becomes a full-width list */
+  .site-header {
+    flex-direction: column;
+    text-align: center;
+    padding: var(--space-sm) 1rem;
+  }
+
+  .logo img {
+    width: 96px;
+  }
+
+  .tagline {
+    font-size: 1.05rem;
+  }
+
+  .main-nav {
+    width: 100%;
+  }
+
+  .main-nav ul {
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .main-nav a {
+    padding: 0.6rem 1rem;
+  }
+
+  /* Full-width buttons are easier to tap */
+  .button-row .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .page-nav ul {
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  th,
+  td {
+    padding: 0.6rem;
+  }
+
+  fieldset {
+    padding: var(--space-sm);
+  }
+
+  .site-footer {
+    flex-direction: column;
+    padding: var(--space-md) 1rem;
+  }
+}
