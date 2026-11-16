@@ -1,84 +1,44 @@
-# Riverbend Yoga Studio – Touchstone 3
+# Riverbend Yoga Studio (Touchstone 3)
 
-Student project for **Introduction to Web Development – Touchstone 3: Visual Design and Responsive Layout**.
-Client: **Client B – Riverbend Yoga Studio**. Author: Ahmed Yousif.
+This is my Touchstone 3 project for Introduction to Web Development (Visual Design and Responsive Layout). My client is Client B, Riverbend Yoga Studio.
 
-This project builds on my Touchstone 2 site. The four pages keep all of their Task 2 content and features:
-the weekly schedule table, class descriptions, pricing table, instructor biographies, accessibility information,
-studio policies, workshop list, the full request form, the responsive `<picture>` element and the audio player.
-Touchstone 3 adds one external stylesheet (`css/styles.css`) and a few class names and wrapper `<div>`s
-so the CSS can lay the pages out with Flexbox.
+Live site: https://iseido.github.io/Riverbend-Yoga/
 
-## Media files
+I built this on top of my Touchstone 2 site, so all the Task 2 content is still here: the schedule and pricing tables, class descriptions, instructor bios, accessibility info, studio policies, the workshop list and the request form. For Task 3 I added one stylesheet, `css/styles.css`, plus some class names and a few wrapper `<div>`s so I could lay the pages out with Flexbox.
 
-All seven media files from Touchstone 2 are included and load correctly:
+## Running it locally
 
-| File | Folder | Used on |
-|---|---|---|
-| `yoga-logo_c.png` | `images/` | every page (header logo) |
-| `yoga-studio_c.png` | `images/` | index.html (Our mission) |
-| `yoga-feature-large_c.png` | `images/` | index.html (featured class, screens 800px and wider) |
-| `yoga-feature-small_c.png` | `images/` | index.html (featured class, smaller screens) |
-| `yoga-instructor_c.png` | `images/` | about.html (Maya Collins) |
-| `yoga-workshop_c.png` | `images/` | events.html (workshop figure) |
-| `yoga-breathing_c.mp3` | `audio/` | index.html (breathing exercise, 22 seconds) |
+Download or clone the repo and open `index.html` in a browser. There is nothing to install. Keep the folders together, because the pages load the CSS, images, fonts and audio with relative paths.
 
-The logo file has a white background, so the CSS uses `mix-blend-mode: multiply` to let the cream header show through it.
+To check the responsive layout, open the developer tools (F12), turn on the device toolbar and try a phone size and a tablet size.
 
-## How to run it locally
-
-1. Keep all files and folders together.
-2. Double-click `index.html` to open it in a modern browser (Chrome, Edge, Firefox or Safari).
-3. Use the menu to move between the four pages.
-
-To test the responsive layout, press F12 to open the developer tools and turn on the device toolbar,
-or make the browser window narrower.
-
-## Publishing with GitHub Pages (optional)
-
-1. Create a GitHub repository and upload every file and folder in this project.
-2. Open **Settings → Pages**, choose the `main` branch and `/ (root)`, then click **Save**.
-3. After a minute GitHub shows your live link, for example `https://<your-username>.github.io/<repository-name>/`.
-4. Paste the repository link and the live link into Section 1 of the Touchstone 3 document.
-
-## Project structure
+## Files
 
 ```
-Riverbend-Yoga/
-├── index.html
-├── services.html
-├── about.html
-├── events.html
-├── css/
-│   └── styles.css
-├── images/          (the six PNG images)
-├── audio/           (yoga-breathing_c.mp3)
-├── fonts/           (Lora and Nunito Sans, stored locally)
-├── screenshots/     (screenshots used in the Touchstone 3 document)
-└── README.md
+index.html, services.html, about.html, events.html
+css/styles.css     the only stylesheet, linked from all four pages
+images/            the logo and photos from Task 2
+audio/             the guided breathing MP3
+fonts/             Lora and Nunito Sans, saved locally
+screenshots/       screenshots I used in my Touchstone 3 document
 ```
 
-## Design summary
+## Design
 
-- **Colors (4):** cream `#F7F3EC`, sage green `#4F6F5A`, sand `#D9B99B`, charcoal `#2E3532`.
-  Every text and background pair meets the WCAG AA contrast level (lowest: sage on cream, 5.06:1).
-- **Fonts (2):** Lora (headings, legends, tagline) and Nunito Sans (body text, menu, buttons, form).
-  Body text is 18px to make reading easier for older adults.
-- **Flexbox:** header, main menu, "On this page" links, photo-and-text rows, card sections, buttons,
-  form choices and footer.
-- **Media queries:** 900px (tablet) and 600px (phone).
-- All paths are relative.
+I kept the palette to four colors: cream (#F7F3EC) for the background, sage green (#4F6F5A) for headings and buttons, sand (#D9B99B) for borders and highlight boxes, and charcoal (#2E3532) for body text and the footer. Every text and background pair passes the WCAG AA contrast check. The lowest one is sage on cream at 5.06:1.
 
-## Testing done
+Headings use Lora and everything else uses Nunito Sans. I set the body text to 18px because the studio wants older adults to feel welcome, and bigger text is easier for them to read.
 
-- All four pages open and load `css/styles.css`.
-- Every link and in-page anchor (for example `about.html#accessibility-heading`) points to a page and id that exist.
-- No horizontal scrolling at 1366px, 820px and 390px wide.
-- HTML checked with html-validate: no errors.
-- All six images and the MP3 load on every page that uses them, and the `<picture>` element shows the large photo on desktop and the small one on phones.
+The header, menu, cards, photo rows, form and footer all use Flexbox. There are two media queries. At 900px the photos move above their text, and at 600px the menu turns into a list of full-width buttons.
+
+The logo PNG has a white background, so I used `mix-blend-mode: multiply` to blend it into the cream header instead of showing a white box.
+
+## Testing
+
+I opened every page at 1366px, 820px and 390px wide and checked that none of them scroll sideways. All the links and section links go to pages and ids that exist, all the images and the MP3 load, and html-validate found no errors in the HTML.
 
 ## Notes
 
-- The request form has no backend (`action="#"`), as in Touchstone 2. The browser checks the
-  required fields and formats, but the form does not send a real request.
-- Lora and Nunito Sans are free fonts under the SIL Open Font License (license files are in `fonts/`).
+The request form doesn't have a backend (`action="#"`), same as in Task 2. The browser checks the required fields, but nothing actually gets sent.
+
+Lora and Nunito Sans are free under the SIL Open Font License. The license files are in `fonts/`.
